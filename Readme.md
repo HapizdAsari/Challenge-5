@@ -10,7 +10,7 @@ This project is about implemetation of Design Pattern with Service Repository, A
 - email : superadmin@gmail.com
 - password : SuperAdmin
 
-## Accessing API Documentation
+## ENDPOINT API Documentation
 
 - http://{{host}}/api/v1/api-docs
 
