@@ -1,0 +1,261 @@
+openapi: 3.0.0
+info:
+  title: Binar Academy Post API - FSW 1
+  description: Challenge 5 - Binar Academy
+  contact:
+    email: hapizdasari@gmail.com
+  version: '1.0'
+servers:
+  - url: http://localhost:8000/api/v1
+    variables: {}
+paths:
+  /register:
+    post:
+      tags:
+        - Users
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - password
+                - address
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hapizdasari@gmail.com
+                password:
+                  type: string
+                  example: 12345
+                address:
+                  type: string
+                  example: Perumahan Dzikra Residence 1
+        required: false
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+  /admin:
+    post:
+      tags:
+        - Admin
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - password
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hapizdasari@gmail.com
+                password:
+                  type: string
+                  example: 12345
+        required: false
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+  /login:
+    post:
+      tags:
+        - Users
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - password
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hapizdasari@gmail.com
+                password:
+                  type: string
+                  example: 12345
+        required: false
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+  /users:
+    get:
+      tags:
+        - Users
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+  /cars:
+    get:
+      tags:
+        - Cars
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+    post:
+      tags:
+        - Cars
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - name
+                - image
+                - price
+                - size
+                - type
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Avanza
+                image:
+                  type: string
+                  example: avanza.jpg
+                price: 
+                  type: integer
+                  example: 500000
+                size:
+                  type: string
+                  example: small
+                type:
+                  type: string
+                  example: Off Roader
+        required: false
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+  /cars/{id}:
+    get:
+      tags:
+        - Cars
+      parameters:
+        - name: id
+          in: path
+          require: true
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+  /cars/{id_cars}:
+    put:
+      tags:
+        - Cars
+      parameters:
+        - name: id_cars
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - name
+                - image
+                - price
+                - size
+                - type
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Update title
+                image:
+                  type: string
+                  example: update-avanza.jpg
+                price: 
+                  type: integer
+                  format: int32
+                  example: 250000
+                size:
+                  type: string
+                  example: large
+                type:
+                  type: string
+                  example: Convertible
+        required: false
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+        - Cars
+      parameters:
+        - name: id_cars
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: Success
+          headers: {}
+        '500':
+          description: Server error
+          headers: {}
+      deprecated: false
