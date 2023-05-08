@@ -12,7 +12,7 @@ This project is about implemetation of Design Pattern with Service Repository, A
 
 ## ENDPOINT API Documentation
 
-- http://{{host}}/api/v1/api-docs
+- http://localhost:8000/api/v1/api-docs
 
 ## How To Run
 
