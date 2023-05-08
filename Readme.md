@@ -43,5 +43,5 @@ npm run db:seed
 5. Running Project on development
 
 ```bash
-npm run dev
+npm run start
 ```
